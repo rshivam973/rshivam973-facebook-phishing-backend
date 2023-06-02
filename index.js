@@ -5,6 +5,7 @@ const mongoose=require('mongoose');
 var bodyParser = require('body-parser');
 const cors=require("cors");
 const DB= process.env.DATABASE;
+const PORT= process.env.PORT || 5000;
 
 const app=express();
 app.use(express.json());
@@ -55,6 +56,6 @@ app.post("/login",(req,res)=>{
 //login ends
 
 
-app.listen(5000,()=>{
-    console.log("backend started at port 5000")
+app.listen(PORT,()=>{
+    console.log(`backend started at port ${PORT}`)
 });
